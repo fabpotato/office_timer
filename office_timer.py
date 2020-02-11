@@ -43,11 +43,11 @@ def tick():
 SHIFT = datetime.timedelta(hours = 7, minutes=40)
 today = str(datetime.datetime.now().date())
 filename = "is_running"+today+".txt"
-file_exists = os.path.isfile(filename)
+file_exists = os.path.isfile("temp/"+filename)
 if file_exists:
     exit()
 else:
-    file = open(filename,'a')
+    file = open("temp/"+filename,'a')
     file.close() 
 tick()
 root.mainloop()
